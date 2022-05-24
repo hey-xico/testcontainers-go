@@ -705,6 +705,7 @@ func (p *DockerProvider) BuildImage(ctx context.Context, img ImageBuildInfo) (st
 		Tags:        []string{repoTag},
 		Remove:      true,
 		ForceRemove: true,
+		Version:     types.BuilderBuildKit,
 	}
 
 	resp, err := p.client.ImageBuild(ctx, buildContext, buildOptions)
