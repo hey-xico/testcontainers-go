@@ -699,6 +699,7 @@ func (p *DockerProvider) BuildImage(ctx context.Context, img ImageBuildInfo) (st
 
 	buildOptions := types.ImageBuildOptions{
 		BuildArgs:   img.GetBuildArgs(),
+		Version:     types.BuilderBuildKit,
 		Dockerfile:  img.GetDockerfile(),
 		Context:     buildContext,
 		Tags:        []string{repoTag},
